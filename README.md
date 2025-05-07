@@ -16,11 +16,6 @@ Your project is live at:
 
 **[https://vercel.com/khansardarms-gmailcoms-projects/v0-git-hub-and-linked-in-data](https://vercel.com/khansardarms-gmailcoms-projects/v0-git-hub-and-linked-in-data)**
 
-## Build your app
-
-Continue building your app on:
-
-**[https://v0.dev/chat/projects/VsGAko6Ol9m](https://v0.dev/chat/projects/VsGAko6Ol9m)**
 
 ## How It Works
 
