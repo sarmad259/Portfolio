@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Badge } from "@/components/ui/badge"
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, MessageCircle } from "lucide-react"
+import { Mail, Send, Github, Linkedin, Instagram } from "lucide-react"
 
 export function ContactSection() {
   const [isVisible, setIsVisible] = useState(false)
@@ -51,18 +51,6 @@ export function ContactSection() {
       value: "sarmadkhan259@gmail.com",
       href: "mailto:sarmadkhan259@gmail.com",
     },
-    {
-      icon: Phone,
-      label: "Phone",
-      value: "+92 XXX XXXXXXX",
-      href: "tel:+92XXXXXXXXX",
-    },
-    {
-      icon: MapPin,
-      label: "Location",
-      value: "Pakistan",
-      href: "#",
-    },
   ]
 
   const socialLinks = [
@@ -75,20 +63,14 @@ export function ContactSection() {
     {
       icon: Linkedin,
       label: "LinkedIn",
-      href: "https://linkedin.com/in/sarmad-khan",
+      href: "https://www.linkedin.com/in/sarmad-khan-0071bb24a",
       color: "hover:text-blue-600",
     },
     {
-      icon: Twitter,
-      label: "Twitter",
-      href: "https://twitter.com/sarmadkhan259",
-      color: "hover:text-blue-400",
-    },
-    {
-      icon: MessageCircle,
-      label: "WhatsApp",
-      href: "https://wa.me/92XXXXXXXXX",
-      color: "hover:text-green-500",
+      icon: Instagram,
+      label: "Instagram",
+      href: "https://www.instagram.com/msarmad.k/?hl=en",
+      color: "hover:text-pink-500",
     },
   ]
 
@@ -239,7 +221,7 @@ export function ContactSection() {
                 <CardTitle className="text-2xl">Connect With Me</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 gap-4">
                   {socialLinks.map((social, index) => (
                     <a
                       key={index}
@@ -296,21 +278,21 @@ export function ContactSection() {
               Email Me
             </Button>
             <Button
-              variant="outline"
-              size="lg"
-              className="hover:bg-accent/50 transition-all duration-200 hover:scale-105 bg-transparent"
-              onClick={() => window.open("https://wa.me/92XXXXXXXXX", "_blank")}
-            >
-              <MessageCircle className="mr-2 h-5 w-5" />
-              WhatsApp
-            </Button>
-            <Button
               size="lg"
               className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 transition-all duration-200 hover:scale-105"
-              onClick={() => window.open("https://linkedin.com/in/sarmad-khan", "_blank")}
+              onClick={() => window.open("https://www.linkedin.com/in/sarmad-khan-0071bb24a", "_blank")}
             >
               <Linkedin className="mr-2 h-5 w-5" />
               LinkedIn
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="hover:bg-accent/50 transition-all duration-200 hover:scale-105 bg-transparent"
+              onClick={() => window.open("https://www.instagram.com/msarmad.k/?hl=en", "_blank")}
+            >
+              <Instagram className="mr-2 h-5 w-5" />
+              Instagram
             </Button>
           </div>
         </div>
