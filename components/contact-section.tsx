@@ -48,8 +48,8 @@ export function ContactSection() {
     {
       icon: Mail,
       label: "Email",
-      value: "sarmadkhan259@gmail.com",
-      href: "mailto:sarmadkhan259@gmail.com",
+      value: "khansardarms@gmail.com",
+      href: "mailto:khansardarms@gmail.com",
     },
   ]
 
@@ -272,7 +272,7 @@ export function ContactSection() {
               variant="outline"
               size="lg"
               className="hover:bg-accent/50 transition-all duration-200 hover:scale-105 bg-transparent"
-              onClick={() => window.open("mailto:sarmadkhan259@gmail.com", "_blank")}
+              onClick={() => window.open("mailto:khansardarms@gmail.com", "_blank")}
             >
               <Mail className="mr-2 h-5 w-5" />
               Email Me

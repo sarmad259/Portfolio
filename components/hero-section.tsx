@@ -52,6 +52,7 @@ export function HeroSection() {
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 text-white border-0 transition-all duration-300 hover:scale-105"
+                onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
               >
                 <Rocket className="mr-2 h-5 w-5" />
                 View My Projects
@@ -60,6 +61,7 @@ export function HeroSection() {
                 variant="outline"
                 size="lg"
                 className="border-gray-400/30 text-gray-200 hover:bg-gray-800/20 transition-all duration-300 hover:scale-105 bg-transparent"
+                onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
               >
                 <Mail className="mr-2 h-5 w-5" />
                 Contact Me
@@ -68,21 +70,25 @@ export function HeroSection() {
 
             <div className="flex space-x-6">
               <a
-                href="#"
+                href="https://github.com/sarmad259"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-white/80 hover:text-white transition-all duration-200 hover:scale-110"
                 aria-label="GitHub"
               >
                 <Github className="h-6 w-6" />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/in/sarmad-khan-0071bb24a"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-white/80 hover:text-white transition-all duration-200 hover:scale-110"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="h-6 w-6" />
               </a>
               <a
-                href="#"
+                href="mailto:khansardarms@gmail.com"
                 className="text-white/80 hover:text-white transition-all duration-200 hover:scale-110"
                 aria-label="Email"
               >
