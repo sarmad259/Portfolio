@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { ExternalLink, Github, ChevronLeft, ChevronRight, Star } from "lucide-react"
+import { Github, ChevronLeft, ChevronRight, Star } from "lucide-react"
 
 export function ProjectsSection() {
   const [isVisible, setIsVisible] = useState(false)
@@ -36,7 +36,6 @@ export function ProjectsSection() {
       technologies: ["Python", "Machine Learning", "Data Science", "Predictive Analytics", "Model Optimization"],
       image: "/images/previsio.jpg",
       github: "https://github.com/sarmad259/ML-Project",
-      demo: "#",
       featured: true,
     },
     {
@@ -46,7 +45,6 @@ export function ProjectsSection() {
       technologies: ["Python", "Big Data", "Data Mining", "Analytics", "Distributed Computing"],
       image: "/images/big-data-analysis.jpg",
       github: "https://github.com/sarmad259/Big-Data-Analysis-",
-      demo: "#",
     },
     {
       title: "Artificial Neural Network",
@@ -55,7 +53,6 @@ export function ProjectsSection() {
       technologies: ["Python", "Neural Networks", "Deep Learning", "Backpropagation", "NumPy"],
       image: "/images/neural-network.png",
       github: "https://github.com/sarmad259/Artificial-Neural-Network",
-      demo: "#",
     },
     {
       title: "Operating Systems Project",
@@ -64,7 +61,6 @@ export function ProjectsSection() {
       technologies: ["C", "System Programming", "Process Management", "Memory Management", "File Systems"],
       image: "/images/operating-system.jpg",
       github: "https://github.com/sarmad259/OS-PROJECT",
-      demo: "#",
     },
     {
       title: "Waterpark Management System",
@@ -73,7 +69,6 @@ export function ProjectsSection() {
       technologies: ["C++", "OOP", "Design Patterns", "System Design", "Database Management"],
       image: "/images/waterpark.jpg",
       github: "https://github.com/sarmad259/OOP-Project",
-      demo: "#",
     },
   ]
 
@@ -160,18 +155,6 @@ export function ProjectsSection() {
                         >
                           <Github className="mr-2 h-4 w-4" />
                           Code
-                        </Button>
-                        <Button
-                          size="sm"
-                          className={`${
-                            project.featured
-                              ? "bg-gradient-to-r from-yellow-500 to-orange-600 hover:from-yellow-600 hover:to-orange-700"
-                              : "bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700"
-                          } transition-all duration-200 hover:scale-105`}
-                          onClick={() => window.open(project.demo, "_blank")}
-                        >
-                          <ExternalLink className="mr-2 h-4 w-4" />
-                          Demo
                         </Button>
                       </div>
                     </CardContent>
@@ -273,18 +256,6 @@ export function ProjectsSection() {
                   >
                     <Github className="mr-2 h-4 w-4" />
                     Code
-                  </Button>
-                  <Button
-                    size="sm"
-                    className={`${
-                      project.featured
-                        ? "bg-gradient-to-r from-yellow-500 to-orange-600 hover:from-yellow-600 hover:to-orange-700"
-                        : "bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700"
-                    } transition-all duration-200 hover:scale-105`}
-                    onClick={() => window.open(project.demo, "_blank")}
-                  >
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    Demo
                   </Button>
                 </div>
               </CardContent>

@@ -28,20 +28,45 @@ export function ExperienceSection() {
 
   const experiences = [
     {
-      company: "Doctor Billing Experts L.L.C",
-      position: "Data Science Intern",
-      duration: "2024",
+      company: "National University of Computer and Emerging Sciences",
+      position: "Teacher Assistant",
+      duration: "Aug 2025 - Jan 2026",
+      period: "6 mos",
+      location: "Peshawar, Khyber Pakhtunkhwa, Pakistan · On-site",
       description:
-        "Applied data science and programming skills to real-world healthcare billing projects, analyzing complex datasets and developing solutions for billing optimization.",
-      skills: ["Data Science", "Python", "Data Analysis", "Healthcare Analytics"],
+        "Assisted in teaching and mentoring students in computer science courses, providing guidance on programming concepts and supporting the learning experience.",
+      skills: ["Assistant Teaching", "Python (Programming Language)", "Mentoring"],
+    },
+    {
+      company: "Owlvest",
+      position: "AI Engineer",
+      type: "Part-time",
+      duration: "May 2025 - Dec 2025",
+      period: "8 mos",
+      location: "Islāmābād, Pakistan · Remote",
+      description:
+        "Building and optimizing LLMs, RAG systems, and classification models to drive data-driven insights and enhance company operations.",
+      skills: ["Python (Programming Language)", "JavaScript", "LLMs", "RAG Systems"],
     },
     {
       company: "Bytewise Limited",
       position: "Software Development Intern",
       duration: "2024",
+      period: "Internship",
+      location: "Remote",
       description:
         "Gained practical experience in software development, working on various projects and applying programming skills in a professional environment.",
       skills: ["Software Development", "Programming", "Project Management", "Team Collaboration"],
+    },
+    {
+      company: "Doctor Billing Experts L.L.C",
+      position: "Data Science Intern",
+      duration: "2023",
+      period: "Internship",
+      location: "Remote",
+      description:
+        "Applied data science and programming skills to real-world healthcare billing projects, analyzing complex datasets and developing solutions for billing optimization.",
+      skills: ["Data Science", "Python", "Data Analysis", "Healthcare Analytics"],
     },
   ]
 
@@ -70,16 +95,32 @@ export function ExperienceSection() {
             >
               <CardHeader>
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                  <div>
-                    <CardTitle className="text-2xl flex items-center gap-2">
+                  <div className="flex-1">
+                    <CardTitle className="text-2xl flex items-center gap-2 mb-2">
                       <Building className="h-6 w-6 text-blue-500" />
                       {exp.company}
                     </CardTitle>
-                    <p className="text-xl text-muted-foreground mt-1">{exp.position}</p>
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <p className="text-xl font-semibold text-foreground">{exp.position}</p>
+                      {exp.type && (
+                        <Badge variant="outline" className="text-xs">
+                          {exp.type}
+                        </Badge>
+                      )}
+                    </div>
+                    {exp.location && (
+                      <p className="text-sm text-muted-foreground mt-2 flex items-center gap-1">
+                        <span className="inline-block w-1 h-1 rounded-full bg-muted-foreground"></span>
+                        {exp.location}
+                      </p>
+                    )}
                   </div>
-                  <div className="flex items-center gap-2 text-muted-foreground">
-                    <Calendar className="h-4 w-4" />
-                    <span>{exp.duration}</span>
+                  <div className="flex flex-col items-start md:items-end gap-1">
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                      <Calendar className="h-4 w-4" />
+                      <span className="font-medium">{exp.duration}</span>
+                    </div>
+                    <span className="text-sm text-muted-foreground">{exp.period}</span>
                   </div>
                 </div>
               </CardHeader>
