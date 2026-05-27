@@ -64,6 +64,14 @@ export function ProjectsSection() {
     setCurrentProject((prev) => (prev - 1 + projects.length) % projects.length)
   }
 
+  const handleGitHubClick = (url: string) => {
+    try {
+      window.open(url, "_blank")
+    } catch (error) {
+      console.error("Failed to open GitHub link:", error)
+    }
+  }
+
   return (
     <section ref={sectionRef} id="projects" className="py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -135,7 +143,7 @@ export function ProjectsSection() {
                           variant="outline"
                           size="sm"
                           className="hover:bg-accent/50 transition-all duration-200 hover:scale-105 bg-transparent"
-                          onClick={() => window.open(project.github, "_blank")}
+                          onClick={() => handleGitHubClick(project.github)}
                         >
                           <Github className="mr-2 h-4 w-4" />
                           Code
@@ -236,7 +244,7 @@ export function ProjectsSection() {
                     variant="outline"
                     size="sm"
                     className="hover:bg-accent/50 transition-all duration-200 hover:scale-105 bg-transparent"
-                    onClick={() => window.open(project.github, "_blank")}
+                    onClick={() => handleGitHubClick(project.github)}
                   >
                     <Github className="mr-2 h-4 w-4" />
                     Code
