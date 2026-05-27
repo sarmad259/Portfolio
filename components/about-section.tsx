@@ -64,76 +64,63 @@ export function AboutSection() {
   ]
 
   return (
-    <section ref={sectionRef} id="about" className="py-20 relative">
+    <section ref={sectionRef} id="about" className="py-20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`text-center mb-16 ${isVisible ? "fade-in" : "opacity-0"}`}>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-              About Me
-            </span>
+        <div className={`text-center mb-16 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
+          <h2 className="section-title mb-4">
+            About Me
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Passionate AI student with hands-on experience in machine learning and data science
+          <p className="text-lg text-muted-light/80 max-w-3xl mx-auto leading-relaxed">
+            Pushing the boundaries of AI/ML with research-driven implementations and production-ready systems
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-          <div className={`space-y-6 ${isVisible ? "slide-in-left" : "opacity-0"}`}>
-            <p className="text-lg leading-relaxed">
-              As a student at the National University of Computer and Emerging Sciences, I am pursuing a Bachelor's
-              degree in Artificial Intelligence. I have gained practical experience through internships at Bytewise
-              Limited and Doctor Billing Experts L.L.C, where I applied my skills in data science and programming to
-              real-world projects.
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+          <div className={`space-y-6 ${isVisible ? "animate-fade-in-left" : "opacity-0"}`}>
+            <p className="text-lg leading-relaxed text-muted-light/90">
+              AI research enthusiast exploring the frontiers of computer vision, knowledge distillation, and RAG systems. I combine rigorous academic training with practical experience building production-scale ML systems that solve real-world problems.
             </p>
-            <p className="text-lg leading-relaxed">
-              I am passionate about leveraging AI to solve complex problems and create innovative solutions. I am also
-              certified in Google AI Essentials and Microsoft Excel, which enhance my ability to analyze and visualize
-              data effectively.
+            <p className="text-lg leading-relaxed text-muted-light/90">
+              Currently advancing medical imaging with novel CNN architectures at DFKI, while architecting intelligent form digitization pipelines. I am passionate about bridging the gap between cutting-edge research and deployable solutions.
             </p>
-            <p className="text-lg leading-relaxed">
-              My goal is to continue learning and growing as an AI professional, and to contribute to the advancement of
-              this field.
+            <p className="text-lg leading-relaxed text-muted-light/90">
+              Committed to continuous learning and pushing the boundaries of what&apos;s possible with AI—whether through optimized model compression, domain-specific fine-tuning, or innovative system design.
             </p>
           </div>
 
-          <div className={`${isVisible ? "slide-in-right" : "opacity-0"}`}>
-            <Card className="card-hover bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20 border-0">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-6 text-center">Skills & Technologies</h3>
-                <div className="flex flex-wrap gap-3">
-                  {skills.map((skill, index) => (
-                    <Badge
-                      key={skill}
-                      variant="secondary"
-                      className="px-3 py-1 bg-gradient-to-r from-blue-500/10 to-purple-500/10 hover:from-blue-500/20 hover:to-purple-500/20 transition-all duration-200 hover:scale-105"
-                      style={{ animationDelay: `${index * 0.1}s` }}
-                    >
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+          <div className={`${isVisible ? "animate-fade-in-right" : "opacity-0"}`}>
+            <div className="card-modern card-hover p-8 space-y-6">
+              <h3 className="text-2xl font-bold bg-gradient-to-r from-foreground to-muted-light bg-clip-text text-transparent">Technical Skills</h3>
+              <div className="flex flex-wrap gap-3">
+                {skills.map((skill, index) => (
+                  <span
+                    key={skill}
+                    className="px-3 py-1.5 rounded-lg text-sm font-medium bg-primary/20 text-primary-light border border-primary/30 hover:border-primary/60 hover:bg-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
+                    style={{ animationDelay: `${index * 0.05}s` }}
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => (
-            <Card
+            <div
               key={feature.title}
-              className={`card-hover bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 border-0 ${
-                isVisible ? "fade-in" : "opacity-0"
+              className={`card-modern card-hover group p-6 text-center ${
+                isVisible ? "animate-fade-in-up" : "opacity-0"
               }`}
-              style={{ animationDelay: `${index * 0.2}s` }}
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-                  <feature.icon className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                <p className="text-muted-foreground">{feature.description}</p>
-              </CardContent>
-            </Card>
+              <div className="w-14 h-14 mx-auto mb-4 bg-gradient-to-br from-primary/30 to-secondary/30 rounded-xl flex items-center justify-center group-hover:from-primary/50 group-hover:to-secondary/50 transition-all duration-300">
+                <feature.icon className="h-7 w-7 text-primary-light" />
+              </div>
+              <h3 className="text-lg font-bold mb-2 text-foreground transition-all duration-300 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-[rgb(var(--primary))] group-hover:via-[rgb(var(--secondary))] group-hover:to-[rgb(var(--accent-warm))] group-hover:bg-clip-text">{feature.title}</h3>
+              <p className="text-sm text-muted-light/80 leading-relaxed">{feature.description}</p>
+            </div>
           ))}
         </div>
       </div>
