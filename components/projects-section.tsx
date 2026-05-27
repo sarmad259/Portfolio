@@ -30,45 +30,29 @@ export function ProjectsSection() {
 
   const projects = [
     {
-      title: "Previsio 🚀",
+      title: "Formilate — AI Form Digitization Pipeline",
       description:
-        "Advanced machine learning project featuring predictive analytics, data preprocessing, and model optimization. This flagship project demonstrates comprehensive ML pipeline implementation with real-world applications and performance metrics.",
-      technologies: ["Python", "Machine Learning", "Data Science", "Predictive Analytics", "Model Optimization"],
-      image: "/images/previsio.jpg",
-      github: "https://github.com/sarmad259/ML-Project",
+        "Architected an end-to-end pipeline digitizing physical forms using YOLOv11 object detection and a novel weighted spatial clustering algorithm, improving accuracy from 56% to 72%. Designed an agentic self-learning system via OpenRouter that extracts correction rules from user feedback into PostgreSQL JSONB for automated prompt injection. Shipped a full-stack app (Django REST + React 19) with JWT auth, Monaco Editor, and ReactFlow.",
+      technologies: ["YOLOv11", "ONNX", "Tesseract", "GPT-4", "Django REST", "React 19", "PostgreSQL"],
+      image: "/images/formilate.jpg",
+      github: "https://github.com/sarmad259/formilate",
       featured: true,
     },
     {
-      title: "Big Data Analysis",
+      title: "Pneumonia Detector",
       description:
-        "Comprehensive big data processing and analytics project implementing distributed computing solutions, data mining techniques, and real-time data processing pipelines for large-scale datasets.",
-      technologies: ["Python", "Big Data", "Data Mining", "Analytics", "Distributed Computing"],
-      image: "/images/big-data-analysis.jpg",
-      github: "https://github.com/sarmad259/Big-Data-Analysis-",
+        "Trained a CNN-based medical image classifier achieving 92% accuracy on chest X-ray data using PyTorch, with data augmentation to improve generalization. Deployed model via Flask REST API with real-time inference visualization, enabling clinicians to receive instant predictions with confidence scores.",
+      technologies: ["Python", "PyTorch", "CNN", "Flask", "Medical Imaging"],
+      image: "/images/pneumonia-detector.jpg",
+      github: "https://github.com/sarmad259/pneumonia-detector",
     },
     {
-      title: "Artificial Neural Network",
+      title: "Kisan Saathi — Agricultural Advisory Platform",
       description:
-        "Implementation of various neural network architectures from scratch including feedforward networks, backpropagation algorithms, and optimization techniques for deep learning applications.",
-      technologies: ["Python", "Neural Networks", "Deep Learning", "Backpropagation", "NumPy"],
-      image: "/images/neural-network.png",
-      github: "https://github.com/sarmad259/Artificial-Neural-Network",
-    },
-    {
-      title: "Operating Systems Project",
-      description:
-        "Comprehensive OS project implementing core operating system concepts including process scheduling, memory management, file systems, and synchronization mechanisms using system programming.",
-      technologies: ["C", "System Programming", "Process Management", "Memory Management", "File Systems"],
-      image: "/images/operating-system.jpg",
-      github: "https://github.com/sarmad259/OS-PROJECT",
-    },
-    {
-      title: "Waterpark Management System",
-      description:
-        "Object-oriented waterpark management system featuring visitor tracking, facility management, ticket booking, staff scheduling, and revenue analytics using advanced OOP principles and design patterns.",
-      technologies: ["C++", "OOP", "Design Patterns", "System Design", "Database Management"],
-      image: "/images/waterpark.jpg",
-      github: "https://github.com/sarmad259/OOP-Project",
+        "Launched an agri-tech platform with a Gemini 1.5 Flash advisory chatbot and CV-based plant disease detection, delivering real-time crop diagnosis to smallholder farmers. Integrated Node.js backend with RESTful APIs serving crop health recommendations and disease alerts based on user-uploaded field images.",
+      technologies: ["React", "Node.js", "Gemini 1.5 Flash", "Computer Vision", "REST APIs"],
+      image: "/images/kisan-saathi.jpg",
+      github: "https://github.com/sarmad259/kisan-saathi",
     },
   ]
 
@@ -81,7 +65,7 @@ export function ProjectsSection() {
   }
 
   return (
-    <section ref={sectionRef} id="projects" className="py-20 bg-muted/30">
+    <section ref={sectionRef} id="projects" className="py-20 bg-muted/30" suppressHydrationWarning>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`text-center mb-16 ${isVisible ? "fade-in" : "opacity-0"}`}>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">

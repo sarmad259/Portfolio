@@ -28,14 +28,15 @@ export function ExperienceSection() {
 
   const experiences = [
     {
-      company: "National University of Computer and Emerging Sciences",
-      position: "Teacher Assistant",
-      duration: "Aug 2025 - Jan 2026",
-      period: "6 mos",
-      location: "Peshawar, Khyber Pakhtunkhwa, Pakistan · On-site",
+      company: "German Research Center for Artificial Intelligence (DFKI)",
+      position: "Research Assistant",
+      type: "Remote",
+      duration: "Oct 2025 - Apr 2026",
+      period: "7 mos",
+      location: "Germany · Remote",
       description:
-        "Assisted in teaching and mentoring students in computer science courses, providing guidance on programming concepts and supporting the learning experience.",
-      skills: ["Assistant Teaching", "Python (Programming Language)", "Mentoring"],
+        "Designed a novel CNN architecture for medical image classification, raising diagnostic accuracy from 92% to 97% across clinical datasets. Applied KDLight distillation on VGG (92% size reduction) and MobileNet (2x compression, only 3% accuracy loss) using student-teacher architecture.",
+      skills: ["CNN", "Medical Imaging", "Knowledge Distillation", "PyTorch", "Computer Vision"],
     },
     {
       company: "Owlvest",
@@ -43,35 +44,25 @@ export function ExperienceSection() {
       type: "Part-time",
       duration: "May 2025 - Dec 2025",
       period: "8 mos",
-      location: "Islāmābād, Pakistan · Remote",
+      location: "Islamabad, Pakistan · Remote",
       description:
-        "Building and optimizing LLMs, RAG systems, and classification models to drive data-driven insights and enhance company operations.",
-      skills: ["Python (Programming Language)", "JavaScript", "LLMs", "RAG Systems"],
+        "Sole developer of an end-to-end RAG pipeline serving 17,000+ users across Discord and LinkedIn. Fine-tuned LLMs for domain-specific financial reasoning, reducing hallucination rate across active users.",
+      skills: ["RAG Systems", "LLMs", "Discord API", "Financial AI", "Python", "JavaScript"],
     },
     {
-      company: "Bytewise Limited",
-      position: "Software Development Intern",
-      duration: "2024",
-      period: "Internship",
+      company: "Bytewise Fellowship",
+      position: "Machine Learning Intern",
+      duration: "June 2023 - Oct 2023",
+      period: "5 mos",
       location: "Remote",
       description:
-        "Gained practical experience in software development, working on various projects and applying programming skills in a professional environment.",
-      skills: ["Software Development", "Programming", "Project Management", "Team Collaboration"],
-    },
-    {
-      company: "Doctor Billing Experts L.L.C",
-      position: "Data Science Intern",
-      duration: "2023",
-      period: "Internship",
-      location: "Remote",
-      description:
-        "Applied data science and programming skills to real-world healthcare billing projects, analyzing complex datasets and developing solutions for billing optimization.",
-      skills: ["Data Science", "Python", "Data Analysis", "Healthcare Analytics"],
+        "Engineered a pneumonia detection CNN in PyTorch achieving 92% accuracy, with optimized feature engineering pipelines for medical image analysis.",
+      skills: ["PyTorch", "CNN", "Medical Imaging", "Python", "Data Augmentation"],
     },
   ]
 
   return (
-    <section ref={sectionRef} id="experience" className="py-20 bg-muted/30">
+    <section ref={sectionRef} id="experience" className="py-20 bg-muted/30" suppressHydrationWarning>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`text-center mb-16 ${isVisible ? "fade-in" : "opacity-0"}`}>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
