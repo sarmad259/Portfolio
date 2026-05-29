@@ -34,7 +34,7 @@ export function ProjectsSection() {
       description:
         "Architected an end-to-end pipeline digitizing physical forms using YOLOv11 object detection and a novel weighted spatial clustering algorithm, improving accuracy from 56% to 72%. Designed an agentic self-learning system via OpenRouter that extracts correction rules from user feedback into PostgreSQL JSONB for automated prompt injection. Shipped a full-stack app (Django REST + React 19) with JWT auth, Monaco Editor, and ReactFlow.",
       technologies: ["YOLOv11", "ONNX", "Tesseract", "GPT-4", "Django REST", "React 19", "PostgreSQL"],
-      image: "/images/formilate.jpg",
+      image: "/images/formilate-hero.jpg",
       github: "https://github.com/sarmad259/formilate",
       featured: true,
     },
@@ -43,7 +43,7 @@ export function ProjectsSection() {
       description:
         "Trained a CNN-based medical image classifier achieving 92% accuracy on chest X-ray data using PyTorch, with data augmentation to improve generalization. Deployed model via Flask REST API with real-time inference visualization, enabling clinicians to receive instant predictions with confidence scores.",
       technologies: ["Python", "PyTorch", "CNN", "Flask", "Medical Imaging"],
-      image: "/images/pneumonia-detector.png",
+      image: "/images/pneumonia-detector.jpg",
       github: "https://github.com/sarmad259/pneumonia-detector",
     },
     {
@@ -51,7 +51,7 @@ export function ProjectsSection() {
       description:
         "Launched an agri-tech platform with a Gemini 1.5 Flash advisory chatbot and CV-based plant disease detection, delivering real-time crop diagnosis to smallholder farmers. Integrated Node.js backend with RESTful APIs serving crop health recommendations and disease alerts based on user-uploaded field images.",
       technologies: ["React", "Node.js", "Gemini 1.5 Flash", "Computer Vision", "REST APIs"],
-      image: "/images/kisan-saathi.png",
+      image: "/images/kisan-saathi.jpg",
       github: "https://github.com/sarmad259/kisan-saathi",
     },
   ]
