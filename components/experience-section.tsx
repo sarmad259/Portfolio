@@ -28,14 +28,15 @@ export function ExperienceSection() {
 
   const experiences = [
     {
-      company: "National University of Computer and Emerging Sciences",
-      position: "Teacher Assistant",
-      duration: "Aug 2025 - Jan 2026",
-      period: "6 mos",
-      location: "Peshawar, Khyber Pakhtunkhwa, Pakistan · On-site",
+      company: "German Research Center for Artificial Intelligence (DFKI)",
+      position: "Research Assistant",
+      type: "Remote",
+      duration: "Oct 2025 - Apr 2026",
+      period: "7 mos",
+      location: "Germany · Remote",
       description:
-        "Assisted in teaching and mentoring students in computer science courses, providing guidance on programming concepts and supporting the learning experience.",
-      skills: ["Assistant Teaching", "Python (Programming Language)", "Mentoring"],
+        "Designed a novel CNN architecture for medical image classification, raising diagnostic accuracy from 92% to 97% across clinical datasets. Applied KDLight distillation on VGG (92% size reduction) and MobileNet (2x compression, only 3% accuracy loss) using student-teacher architecture.",
+      skills: ["CNN", "Medical Imaging", "Knowledge Distillation", "PyTorch", "Computer Vision"],
     },
     {
       company: "Owlvest",
@@ -43,102 +44,104 @@ export function ExperienceSection() {
       type: "Part-time",
       duration: "May 2025 - Dec 2025",
       period: "8 mos",
-      location: "Islāmābād, Pakistan · Remote",
+      location: "Islamabad, Pakistan · Remote",
       description:
-        "Building and optimizing LLMs, RAG systems, and classification models to drive data-driven insights and enhance company operations.",
-      skills: ["Python (Programming Language)", "JavaScript", "LLMs", "RAG Systems"],
+        "Sole developer of an end-to-end RAG pipeline serving 17,000+ users across Discord and LinkedIn. Fine-tuned LLMs for domain-specific financial reasoning, reducing hallucination rate across active users.",
+      skills: ["RAG Systems", "LLMs", "Discord API", "Financial AI", "Python", "JavaScript"],
     },
     {
-      company: "Bytewise Limited",
-      position: "Software Development Intern",
-      duration: "2024",
-      period: "Internship",
+      company: "Bytewise Fellowship",
+      position: "Machine Learning Intern",
+      duration: "June 2023 - Oct 2023",
+      period: "5 mos",
       location: "Remote",
       description:
-        "Gained practical experience in software development, working on various projects and applying programming skills in a professional environment.",
-      skills: ["Software Development", "Programming", "Project Management", "Team Collaboration"],
-    },
-    {
-      company: "Doctor Billing Experts L.L.C",
-      position: "Data Science Intern",
-      duration: "2023",
-      period: "Internship",
-      location: "Remote",
-      description:
-        "Applied data science and programming skills to real-world healthcare billing projects, analyzing complex datasets and developing solutions for billing optimization.",
-      skills: ["Data Science", "Python", "Data Analysis", "Healthcare Analytics"],
+        "Engineered a pneumonia detection CNN in PyTorch achieving 92% accuracy, with optimized feature engineering pipelines for medical image analysis.",
+      skills: ["PyTorch", "CNN", "Medical Imaging", "Python", "Data Augmentation"],
     },
   ]
 
   return (
-    <section ref={sectionRef} id="experience" className="py-20 bg-muted/30">
+    <section ref={sectionRef} id="experience" className="py-20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`text-center mb-16 ${isVisible ? "fade-in" : "opacity-0"}`}>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-indigo-500 bg-clip-text text-transparent">
-              Experience
-            </span>
+        <div className={`text-center mb-16 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
+          <h2 className="section-title mb-4">
+            Experience
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Professional experience in data science and software development
+          <p className="text-lg text-muted-light/80 max-w-3xl mx-auto leading-relaxed">
+            Hands-on expertise in AI/ML research and production-scale systems
           </p>
         </div>
 
-        <div className="space-y-8">
+        <div className="space-y-6">
           {experiences.map((exp, index) => (
-            <Card
+            <div
               key={index}
-              className={`card-hover bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 border-0 ${
-                isVisible ? "slide-in-left" : "opacity-0"
+              className={`card-modern card-hover group p-6 md:p-8 ${
+                isVisible ? "animate-fade-in-left" : "opacity-0"
               }`}
-              style={{ animationDelay: `${index * 0.2}s` }}
+              style={{ animationDelay: `${index * 0.15}s` }}
             >
-              <CardHeader>
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                  <div className="flex-1">
-                    <CardTitle className="text-2xl flex items-center gap-2 mb-2">
-                      <Building className="h-6 w-6 text-blue-500" />
-                      {exp.company}
-                    </CardTitle>
-                    <div className="flex items-center gap-2 flex-wrap">
-                      <p className="text-xl font-semibold text-foreground">{exp.position}</p>
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+                {/* Left Content */}
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-start gap-3 mb-3">
+                    <div className="p-2 rounded-lg bg-primary/20 flex-shrink-0 group-hover:bg-primary/40 transition-colors duration-300">
+                      <Building className="h-5 w-5 text-primary-light" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl md:text-2xl font-bold text-foreground transition-all duration-300 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-[rgb(var(--primary))] group-hover:via-[rgb(var(--secondary))] group-hover:to-[rgb(var(--accent-warm))] group-hover:bg-clip-text">
+                        {exp.company}
+                      </h3>
+                    </div>
+                  </div>
+
+                  <div className="ml-11 space-y-2 mb-4">
+                    <div className="flex items-center gap-3 flex-wrap">
+                      <p className="text-lg font-semibold text-muted-light">{exp.position}</p>
                       {exp.type && (
-                        <Badge variant="outline" className="text-xs">
+                        <span className="text-xs px-2.5 py-1 rounded-full bg-primary/20 text-primary-light border border-primary/30 font-medium">
                           {exp.type}
-                        </Badge>
+                        </span>
                       )}
                     </div>
                     {exp.location && (
-                      <p className="text-sm text-muted-foreground mt-2 flex items-center gap-1">
-                        <span className="inline-block w-1 h-1 rounded-full bg-muted-foreground"></span>
+                      <p className="text-sm text-muted-light/70 flex items-center gap-2">
+                        <span className="inline-block w-1.5 h-1.5 rounded-full bg-primary/50"></span>
                         {exp.location}
                       </p>
                     )}
                   </div>
-                  <div className="flex flex-col items-start md:items-end gap-1">
-                    <div className="flex items-center gap-2 text-muted-foreground">
-                      <Calendar className="h-4 w-4" />
-                      <span className="font-medium">{exp.duration}</span>
-                    </div>
-                    <span className="text-sm text-muted-foreground">{exp.period}</span>
+
+                  <p className="ml-11 text-sm md:text-base text-muted-light/90 leading-relaxed mb-4">
+                    {exp.description}
+                  </p>
+
+                  {/* Skills */}
+                  <div className="ml-11 flex flex-wrap gap-2">
+                    {exp.skills.map((skill, i) => (
+                      <span
+                        key={skill}
+                        className="text-xs px-2.5 py-1 rounded-md font-medium bg-secondary/20 text-secondary border border-secondary/30 group-hover:border-secondary/50 transition-all duration-300"
+                        style={{ animationDelay: `${i * 0.05}s` }}
+                      >
+                        {skill}
+                      </span>
+                    ))}
                   </div>
                 </div>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">{exp.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {exp.skills.map((skill) => (
-                    <Badge
-                      key={skill}
-                      variant="secondary"
-                      className="bg-gradient-to-r from-blue-500/10 to-purple-500/10"
-                    >
-                      {skill}
-                    </Badge>
-                  ))}
+
+                {/* Right Timeline */}
+                <div className="flex flex-col items-start md:items-end gap-2 flex-shrink-0">
+                  <div className="flex items-center gap-2 text-primary-light font-semibold">
+                    <Calendar className="h-4 w-4" />
+                    <span className="text-sm md:text-base">{exp.duration}</span>
+                  </div>
+                  <span className="text-xs text-muted-light/70 font-medium">{exp.period}</span>
+                  <div className="h-12 w-px bg-gradient-to-b from-primary/40 to-transparent mt-2 hidden md:block"></div>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           ))}
         </div>
       </div>

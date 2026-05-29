@@ -13,94 +13,96 @@ export function HeroSection() {
   }, [])
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
       {/* Animated Background */}
-      <div className="absolute inset-0 gradient-bg dark:gradient-bg opacity-90" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[rgb(10,20,35)] via-[rgb(15,30,55)] to-[rgb(10,25,47)] opacity-100" />
 
-      {/* Floating Elements */}
-      <div className="absolute top-20 left-10 w-16 h-16 bg-blue-500/10 rounded-full blur-xl floating" />
+      {/* Floating Glow Elements */}
+      <div className="absolute top-10 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl opacity-30 animate-float" />
       <div
-        className="absolute top-40 right-20 w-20 h-20 bg-purple-500/10 rounded-full blur-xl floating"
-        style={{ animationDelay: "1s" }}
+        className="absolute top-40 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl opacity-20 animate-float"
+        style={{ animationDelay: "1.5s" }}
       />
       <div
-        className="absolute bottom-20 left-20 w-18 h-18 bg-indigo-500/10 rounded-full blur-xl floating"
-        style={{ animationDelay: "2s" }}
+        className="absolute bottom-10 left-1/4 w-80 h-80 bg-accent-warm/10 rounded-full blur-3xl opacity-20 animate-float"
+        style={{ animationDelay: "3s" }}
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
-          <div className={`space-y-8 ${isVisible ? "slide-in-left" : "opacity-0"}`}>
-            <div className="space-y-4">
-              <h1 className="text-5xl md:text-7xl font-bold">
-                <span className="text-gray-100">Hi, I'm </span>
-                <span className="bg-gradient-to-r from-blue-300 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
-                  Sarmad Khan
-                </span>
+          <div className={`space-y-8 ${isVisible ? "animate-fade-in-left" : "opacity-0"}`}>
+            <div className="space-y-6">
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/20 border border-primary/30 mb-4">
+                <span className="w-2 h-2 rounded-full bg-primary/60 mr-2 animate-pulse" />
+                <span className="text-sm font-medium text-primary-light">AI/ML Researcher & Engineer</span>
+              </div>
+
+              <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+                <span className="text-foreground">Hi, I&apos;m </span>
+                <span className="gradient-text block">Sarmad Khan</span>
               </h1>
-              <p className="text-xl md:text-2xl text-gray-200 font-medium">
-                Artificial Intelligence Student at FAST-NUCES
+
+              <p className="text-xl md:text-2xl font-semibold text-muted-light">
+                Advancing AI through Research & Innovation
               </p>
-              <p className="text-lg text-gray-300 max-w-2xl leading-relaxed">
-                Passionate about leveraging AI to solve complex problems and create innovative solutions. Experienced in
-                machine learning, deep learning, and data science.
+
+              <p className="text-lg text-muted-light/80 max-w-2xl leading-relaxed">
+                I build cutting-edge AI/ML solutions that drive real-world impact. Specializing in computer vision, RAG systems, and medical imaging—transforming complex problems into elegant solutions.
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-4">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 text-white border-0 transition-all duration-300 hover:scale-105"
+            <div className="flex flex-wrap gap-4 pt-4">
+              <button
                 onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
+                className="btn-primary inline-flex items-center group"
               >
-                <Rocket className="mr-2 h-5 w-5" />
+                <Rocket className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
                 View My Projects
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-gray-400/30 text-gray-200 hover:bg-gray-800/20 transition-all duration-300 hover:scale-105 bg-transparent"
+              </button>
+              <button
                 onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                className="btn-secondary inline-flex items-center"
               >
                 <Mail className="mr-2 h-5 w-5" />
                 Contact Me
-              </Button>
+              </button>
             </div>
 
-            <div className="flex space-x-6">
+            <div className="flex space-x-3 pt-4">
               <a
                 href="https://github.com/sarmad259"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/80 hover:text-white transition-all duration-200 hover:scale-110"
+                className="p-3 rounded-lg bg-primary/20 border border-primary/30 text-primary-light hover:bg-primary/40 hover:border-primary hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 hover:scale-110 group"
                 aria-label="GitHub"
               >
-                <Github className="h-6 w-6" />
+                <Github className="h-5 w-5 group-hover:-translate-y-1 transition-transform duration-300" />
               </a>
               <a
                 href="https://www.linkedin.com/in/sarmad-khan-0071bb24a"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/80 hover:text-white transition-all duration-200 hover:scale-110"
+                className="p-3 rounded-lg bg-primary/20 border border-primary/30 text-primary-light hover:bg-primary/40 hover:border-primary hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 hover:scale-110 group"
                 aria-label="LinkedIn"
               >
-                <Linkedin className="h-6 w-6" />
+                <Linkedin className="h-5 w-5 group-hover:-translate-y-1 transition-transform duration-300" />
               </a>
               <a
                 href="mailto:khansardarms@gmail.com"
-                className="text-white/80 hover:text-white transition-all duration-200 hover:scale-110"
+                className="p-3 rounded-lg bg-primary/20 border border-primary/30 text-primary-light hover:bg-primary/40 hover:border-primary hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 hover:scale-110 group"
                 aria-label="Email"
               >
-                <Mail className="h-6 w-6" />
+                <Mail className="h-5 w-5 group-hover:-translate-y-1 transition-transform duration-300" />
               </a>
             </div>
           </div>
 
           {/* Profile Image */}
-          <div className={`flex justify-center lg:justify-end ${isVisible ? "slide-in-right" : "opacity-0"}`}>
-            <div className="relative">
-              <div className="w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-2 border-white/10 shadow-lg">
+          <div className={`flex justify-center lg:justify-end ${isVisible ? "animate-fade-in-right" : "opacity-0"}`}>
+            <div className="relative group">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-primary via-secondary to-accent-warm rounded-full opacity-30 group-hover:opacity-50 blur transition-all duration-300" />
+              <div className="w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-2 border-primary/30 shadow-2xl shadow-primary/20 relative bg-card-bg group-hover:border-primary/50 transition-all duration-300">
                 <Image
                   src="/images/profile.jpg"
                   alt="Sarmad Khan"
