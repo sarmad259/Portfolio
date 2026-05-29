@@ -43,7 +43,7 @@ export function ProjectsSection() {
       description:
         "Trained a CNN-based medical image classifier achieving 92% accuracy on chest X-ray data using PyTorch, with data augmentation to improve generalization. Deployed model via Flask REST API with real-time inference visualization, enabling clinicians to receive instant predictions with confidence scores.",
       technologies: ["Python", "PyTorch", "CNN", "Flask", "Medical Imaging"],
-      image: "/images/pneumonia-detector.jpg",
+      image: "/images/pneumonia-detector.png",
       github: "https://github.com/sarmad259/pneumonia-detector",
     },
     {
@@ -51,7 +51,7 @@ export function ProjectsSection() {
       description:
         "Launched an agri-tech platform with a Gemini 1.5 Flash advisory chatbot and CV-based plant disease detection, delivering real-time crop diagnosis to smallholder farmers. Integrated Node.js backend with RESTful APIs serving crop health recommendations and disease alerts based on user-uploaded field images.",
       technologies: ["React", "Node.js", "Gemini 1.5 Flash", "Computer Vision", "REST APIs"],
-      image: "/images/kisan-saathi.jpg",
+      image: "/images/kisan-saathi.png",
       github: "https://github.com/sarmad259/kisan-saathi",
     },
   ]
